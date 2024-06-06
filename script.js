@@ -15,7 +15,17 @@ const sliderPicturesArray = [
     slider2 = document.querySelector(".slider_item__2")
   ];
 
-  console.log(sliderPicturesArray);
+const paginationPrev = document.querySelector(".pagination_prev");
+const paginationPoints = [
+    paginationPoint1 = document.querySelector(".pagination_point1"),
+    paginationPoint2 = document.querySelector(".pagination_point2"),
+    paginationPoint3 = document.querySelector(".pagination_point3"),
+    paginationPoint4 = document.querySelector(".pagination_point4"),
+    paginationPoint5 = document.querySelector(".pagination_point5"),
+    paginationPoint6 = document.querySelector(".pagination_point6")
+];
+const paginationNext = document.querySelector(".pagination_next");
+
 const currentSlide = [0, 1, 2, 3, 4];
 
 const render = () => {
@@ -25,20 +35,37 @@ const render = () => {
 };
 render();
 
-const paginationPrev = document.querySelector(".pagination_prev");
-paginationPrev.addEventListener("click", () => {
-    currentSlide.forEach(element => {
-        if (element !== 0) {
-            element--;
+const paginationRender = () => {
+    paginationPoints.forEach(function(element, index) {
+        if (index === currentSlide[2]) {
+            element.classList.add("active");
         } else {
-            element = cats.length;
+            element.classList.remove("active");
         }
     });
-    render()
+};
+paginationRender();
+
+paginationPrev.addEventListener("click", () => {
+    for (let i = 0; i < currentSlide.length; i++) {
+        if (currentSlide[i] !== 0) {
+            currentSlide[i] = currentSlide[i] - 1;
+        } else {
+            currentSlide[i] = cats.length - 1;
+        }
+    }
+    render();
+    paginationRender();
 });
-const paginationPoint1 = document.querySelector(".pagination_point1");
-const paginationPoint2 = document.querySelector(".pagination_point2");
-const paginationPoint3 = document.querySelector(".pagination_point3");
-const paginationPoint4 = document.querySelector(".pagination_point4");
-const paginationPoint5 = document.querySelector(".pagination_point5");
-const paginationNext = document.querySelector(".pagination_next");
+
+paginationNext.addEventListener("click", () => {
+    for (let i = 0; i < currentSlide.length; i++) {
+        if (currentSlide[i] !== cats.length - 1) {
+            currentSlide[i] = currentSlide[i] + 1;
+        } else {
+            currentSlide[i] = 0;
+        }
+    }
+    render();
+    paginationRender();
+});

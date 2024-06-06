@@ -1,0 +1,54 @@
+.main_h1 {
+text-align: center;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.pagination_prev {
+    background-image: url("./img/elements/Arrow_toLeft.svg");
+    width: 8px;
+    height: 14px;
+    margin-right: 5px;
+}
+div[class^="pagination_point"] {
+    background-image: url("./img/elements/round-green.svg");
+    width: 15px;
+    height: 15px;
+    margin-left: 3px;
+    margin-right:  3px;
+}
+
+div[class^="pagination_point"].active {
+    background-image: url("./img/elements/round-red.svg");
+    width: 15px;
+    height: 15px;
+}
+
+.pagination_next {
+    background-image: url("./img/elements/Arrow_toRight.svg");
+    width: 8px;
+    height: 14px;
+    margin-left: 5px;
+} 
+
+.slider {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+div[class^="slider_item"] {
+    width: 350px;
+    height: 250px;
+    border: solid 1px #000000;
+    margin-left: 3px;
+    margin-right:  3px;
+    background-size: cover;
+
+}

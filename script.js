@@ -20,7 +20,7 @@ const currentSlide = [0, 1, 2, 3, 4];
 
 const render = () => {
     sliderPicturesArray.forEach(function(element, index) {
-        element.style.background = "url('./img/cats/" + cats[currentSlide[index]] + "')";
+        element.src = "./img/cats/" + cats[currentSlide[index]];
 });
 };
 render();

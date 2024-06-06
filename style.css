@@ -1,5 +1,12 @@
+main {
+    background-color: rgb(50, 23, 69);
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
 .main_h1 {
 text-align: center;
+color: antiquewhite;
 }
 
 .pagination {
@@ -54,7 +61,7 @@ img[class^="slider_item"] {
 }
 .slider_item__-2 {
     width: 250px;
-    height: 154px;
+    height: 150px;
     opacity: 0.3;
     transform: perspective(500px) rotateY(-60deg); /* Наклон элемента */
 }
@@ -64,7 +71,7 @@ img[class^="slider_item"] {
     height: 218px;
     opacity: 0.6;
     transform: perspective(500px) rotateY(-30deg); /* Наклон элемента */
-    margin-left: -67px;
+    margin-left: -73px;
 }
 .slider_item___0 {
     width: 250px;
@@ -76,11 +83,11 @@ img[class^="slider_item"] {
     height: 218px;
     opacity: 0.6;
     transform: perspective(500px) rotateY(30deg); /* Наклон элемента */
-    margin-right: -67px;
+    margin-right: -73px;
 }
 .slider_item__2 {
     width: 250px;
-    height: 154px;
+    height: 150px;
     opacity: 0.3;
     transform: perspective(500px) rotateY(60deg); /* Наклон элемента */
 

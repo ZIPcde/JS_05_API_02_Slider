@@ -15,6 +15,15 @@ const sliderPicturesArray = [
     slider2 = document.querySelector(".slider_item__2")
   ];
 
+const switcher = [
+    [4, 5, 0, 1, 2],
+    [5, 0, 1, 2, 3],
+    [0, 1, 2, 3, 4],
+    [1, 2, 3, 4, 5],
+    [2, 3, 4, 5, 0],
+    [3, 4, 5, 0, 1]
+];
+
 const paginationPrev = document.querySelector(".pagination_prev");
 const paginationPoints = [
     paginationPoint1 = document.querySelector(".pagination_point1"),
@@ -68,4 +77,17 @@ paginationNext.addEventListener("click", () => {
     }
     render();
     paginationRender();
+});
+
+paginationPoints.forEach((element, index) => {
+    let max = paginationPoints.length - 1;
+    element.addEventListener("click", () => {
+        console.log(switcher[index]);
+        for (let i = 0; i < currentSlide.length; i++) {
+            currentSlide[i] = switcher[index][i];
+        }
+        render();
+        paginationRender();
+        console.log(currentSlide);
+    });
 });
